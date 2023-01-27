@@ -7,8 +7,7 @@ TTL=
 SECRET_KEY=
 API_KEY=
 
-ENV_PATH=$(dirname "$0")/.env
-export "$(grep -v '^#' "$ENV_PATH" | xargs)"
+source .env
 
 if [[ -z "$SECRET_KEY" && "$API_KEY" && "$DOMAIN" ]]; then
     echo "Please set the SECRET_KEY, API_KEY and DOMAIN variables in the .env file"
